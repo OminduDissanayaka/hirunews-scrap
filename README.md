@@ -8,8 +8,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/OmiduAnjane/hirunews-scrap.svg)](https://github.com/OminduAnjane/hirunews-scrap/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/OmiduAnjane/hirunews-scrap.svg)](https://github.com/OminduAnjane/hirunews-scrap/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/OminduDissanayaka/hirunews-scrap.svg)](https://github.com/OminduDissanayaka/hirunews-scrap/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/OminduDissanayaka/hirunews-scrap.svg)](https://github.com/OminduDissanayaka/hirunews-scrap/pulls)
 [![License](https://img.shields.io/badge/license-GNU-blue.svg)](/LICENSE)
 
 </div>
@@ -521,4 +521,4 @@ This Hirunews website includes all types of news. You can use it for free withou
 ```
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@OmiduAnjane](https://github.com/OmiduAnjane/hirunews-scrap) - Hiru News Unofficial scraped project author
+- [@OmiduAnjane](https://github.com/OminduDissanayaka/hirunews-scrap) - Hiru News Unofficial scraped project author
