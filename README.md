@@ -1,6 +1,7 @@
 <p align="center">
   <a href="https://www.hirunews.lk/" rel="noopener">
- <img width=100px height=100px src="https://cdn.hirunews.lk/newassets/logo-3.png" alt="Hiru News Loho"></a>
+    <img width=100px height=100px src="https://cdn.hirunews.lk/newassets/logo-3.png" alt="Hiru News Logo">
+  </a>
 </p>
 
 <h2 align="center">Hiru News Scrap</h2>
@@ -10,24 +11,17 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/OminduDissanayaka/hirunews-scrap.svg)](https://github.com/OminduDissanayaka/hirunews-scrap/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/OminduDissanayaka/hirunews-scrap.svg)](https://github.com/OminduDissanayaka/hirunews-scrap/pulls)
-[![License](https://img.shields.io/badge/license-GNU-blue.svg)](/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> The unofficial scrap for Hiru News
-    <br> 
-</p>
-<p align="center"> This unofficial scraper code for Hiru News is by Omindu Anjana. The news given here belongs to this website https://www.hirunews.lk/. I am Full Stack Software Engineering (U.G) <br> </p>
+<p align="center">This unofficial scraper for Hiru News is by <a href="https://www.omindu.dev">Omindu Dissanayaka</a>. The news given here belongs to <a href="https://www.hirunews.lk/">hirunews.lk</a>.</p>
 
-
-## 🏁 Getting Started <a name = "getting_started"></a>
+## Installation
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Installing
-
 
 ```sh
 yarn add hirunews-scrap
@@ -39,486 +33,326 @@ or
 npm i hirunews-scrap
 ```
 
-## 🎈 Usage <a name="usage"></a>
+## 🎈 Usage
 
-```ts
+```js
 const Hiru = require('hirunews-scrap');
 
-const api = new Hiru()
-```
-## Get Recent News
-```ts
-const news = await api.RecentNews();
-console.log(news);
+const api = new Hiru();
+
+const apiWithOptions = new Hiru({
+  proxy: 'https://example.workers.dev',
+  userAgent: 'MyScraper/1.0 (+https://example.com)',
+  headers: { 'Accept-Language': 'en-US' },
+  timeout: 15000,
+  rateLimit: 1,
+  cache: { ttl: 300000, maxSize: 200 }
+});
 ```
 
+### TypeScript (typed) example
 
 ```ts
-{
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
-  },
-  results: [
-    {
-      title: '’ට්‍රෑමි’ සුළිකුණාටුවෙන් පිලිපීන‍යේ 26 දෙනෙකු ජීවිතක්ෂයට',
-      date: 'Thursday, 24 October 2024 - 14:14',
-      url: 'https://www.hirunews.lk/385920/ට්‍රෑමි-සුළිකුණාටුවෙන්-පිලිපීන‍යේ-26-දෙනෙකු-ජීවිතක්ෂයට'
-    },
-    {
-      title: 'පාස්කු විමර්ශනයේ සිටි පොලිස් ලොක්කෙක්ට හදිසි මාරුවක් දීලා',
-      date: 'Thursday, 24 October 2024 - 13:47',
-      url: 'https://www.hirunews.lk/385917/පාස්කු-විමර්ශනයේ-සිටි-පොලිස්-ලොක්කෙක්ට-හදිසි-මාරුවක්-දීලා'
-    },
-    {
-      title: 'කැනඩා අගමැතිට නායක කමින් යන්නැයි පක්ෂයෙන් බලපෑම්',
-      date: 'Thursday, 24 October 2024 - 12:58',
-      url: 'https://www.hirunews.lk/385912/කැනඩා-අගමැතිට-නායක-කමින්-යන්නැයි-පක්ෂයෙන්-බලපෑම්'
-    },
-    {
-      title: 'පැය දෙකහමාරකට පසු නාමල් CIDයෙන් යයි (වීඩියෝ)',
-      date: 'Thursday, 24 October 2024 - 12:42',
-      url: 'https://www.hirunews.lk/385911/පැය-දෙකහමාරකට-පසු-නාමල්-cidයෙන්-යයි-වීඩියෝ'
-    },
-    {
-      title: 'ශ්‍රී ලංකාවේ මාලදිවයින් මහ කොමසාරිස්වරයා ආරක්ෂක ලේකම් හමුවේ',
-      date: 'Thursday, 24 October 2024 - 12:10',
-      url: 'https://www.hirunews.lk/385909/ශ්‍රී-ලංකාවේ-මාලදිවයින්-මහ-කොමසාරිස්වරයා-ආරක්ෂක-ලේකම්-හමුවේ'
-    },
-    {
-      title: 'ඊශ්‍රායල ජාතික‍යින්ට හදිසි අවශ්‍යතාවකදී දැනුම්දීම සඳහා දුරකථන අංකයක්',
-      date: 'Thursday, 24 October 2024 - 11:51',
-      url: 'https://www.hirunews.lk/385907/ඊශ්‍රායල-ජාතික‍යින්ට-හදිසි-අවශ්‍යතාවකදී-දැනුම්දීම-සඳහා-දුරකථන-අංකයක්'
-    },
-    {
-      title: 'රාජිතට එරෙහි නඩුවේ තීන්දුව ප්‍රකාශ කිරීම නොවැම්බර් 29 වැනිදා',
-      date: 'Thursday, 24 October 2024 - 11:27',
-      url: 'https://www.hirunews.lk/385906/රාජිතට-එරෙහි-නඩුවේ-තීන්දුව-ප්‍රකාශ-කිරීම-නොවැම්බර්-29-වැනිදා'
-    },
-    {
-      title: 'අවලෝකිතේශ්වර නාමයෙන් පෙනී සිටි මහින්ද කොඩිතුවක්කුගේ නඩු තීන්දුවට දින දෙයි',
-      date: 'Thursday, 24 October 2024 - 11:24',
-      url: 'https://www.hirunews.lk/385905/අවලෝකිතේශ්වර නාමයෙන්-පෙනී-සිටි-මහින්ද-කොඩිතුවක්කුගේ-නඩු-තීන්දුවට-දින-දෙයි'
-    },
-    {
-      title: 'හිරු CIA අනාවරණය කළ, දැදුරු ඔයේ වැලි ජාවාරමට අත්සන් යෙදූ පොලිසියේ මැජික් පෑන ගැන විමර්ශන (වීඩියෝ)',
-      date: 'Thursday, 24 October 2024 - 11:06',
-      url: 'https://www.hirunews.lk/385903/හිරු-cia-අනාවරණය-කළ-දැදුරු-ඔයේ-වැලි-ජාවාරමට-අත්සන්-යෙදූ-පොලිසියේ-මැජික්-පෑන-ගැන-විමර්ශන-වීඩියෝ'
-    },
-    {
-      title: 'ඊශ්‍රායල ප්‍රහාරයකින් ලෙබනනයේ 19ක් මරුට',
-      date: 'Thursday, 24 October 2024 - 10:59',
-      url: 'https://www.hirunews.lk/385902/ඊශ්‍රායල-ප්‍රහාරයකින්-ලෙබනනයේ-19ක්-මරුට'
-    },
-    {
-      title: 'ආරුගම්බේ ප්‍රහාර අවදානම ගැන බුද්ධි තොරතුරු ලැබුණා නම් අමෙරිකානු තානාපති නිවේදනය එන තුරු සිටියේ ඇයි?; කංචන විමසයි',
-      date: 'Thursday, 24 October 2024 - 10:52',
-      url: 'https://www.hirunews.lk/385901/ආරුගම්බේ-ප්‍රහාර-අවදානම-ගැන-බුද්ධි-තොරතුරු-ලැබුණා-නම්-අමෙරිකානු-තානාපති-නිවේදනය-එන-තුරු-සිටියේ-ඇයි-කංචන-විමසයි'
-    },
-    {
-      title: 'සැකකටයුතු තරුණයෙකු ඊශ්‍රායල කොන්සල් කාර්යාලය අසල දී අත්අඩංගුවට',
-      date: 'Thursday, 24 October 2024 - 10:37',
-      url: 'https://www.hirunews.lk/385899/සැකකටයුතු-තරුණයෙකු-ඊශ්‍රායල-කොන්සල්-කාර්යාලය-අසල-දී-අත්අඩංගුවට'
-    },
-    {
-      title: 'ප්‍රකාශයක් ලබාදීම සඳහා නාමල් රාජපක්ෂ CIDයට',
-      date: 'Thursday, 24 October 2024 - 10:25',
-      url: 'https://www.hirunews.lk/385898/ප්‍රකාශයක්-ලබාදීම-සඳහා-නාමල්-රාජපක්ෂ-cidයට'
-    },
-    {
-      title: 'ලෝකයේම ප්‍රසිද්ධියට පත් ටාසන් දිවියෙන් සමුගනී',
-      date: 'Thursday, 24 October 2024 - 10:11',
-      url: 'https://www.hirunews.lk/385897/ලෝකයේම-ප්‍රසිද්ධියට-පත්-ටාසන්-දිවියෙන්-සමුගනී'
-    },
-    {
-      title: 'අගමැතිනිය සහ මෙරට කැනේඩියානු මහ කොමසාරිස් අතර හමුවක්',
-      date: 'Thursday, 24 October 2024 - 9:19',
-      url: 'https://www.hirunews.lk/385894/අගමැතිනිය-සහ-මෙරට-කැනේඩියානු-මහ-කොමසාරිස්-අතර-හමුවක්'
-    },
-    {
-      title: 'නිල්වලා ගඟ ආශ්‍රිත පහත් බිම්වලට ගංවතුර අනතුරු ඇගවීම්',
-      date: 'Thursday, 24 October 2024 - 9:06',
-      url: 'https://www.hirunews.lk/385893/නිල්වලා-ගඟ-ආශ්‍රිත-පහත්-බිම්වලට-ගංවතුර-අනතුරු-ඇගවීම්'
-    },
-    {
-      title: 'ජනාධිපති අපේක්ෂකයන්ගේ මැතිවරණ වියදම් අද සිට ප්‍රදර්ශනයට (නිවේදන)',
-      date: 'Thursday, 24 October 2024 - 8:51',
-      url: 'https://www.hirunews.lk/385891/ජනාධිපති-අපේක්ෂකයන්ගේ-මැතිවරණ-වියදම්-අද-සිට-ප්‍රදර්ශනයට-නිවේදන'
-    },
-    {
-      title: 'භාණ්ඩාගාර බැඳුම්කර වෙන්දේසිය 28 වැනිදා',
-      date: 'Thursday, 24 October 2024 - 8:25',
-      url: 'https://www.hirunews.lk/385889/භාණ්ඩාගාර-බැඳුම්කර-වෙන්දේසිය-28-වැනිදා'
-    },
-    {
-      title: 'කැලණිය සරසවි සිසුවාගේ මරණය සම්බන්ධයෙන් සිසුන් 21 දෙනෙකුගෙන් ප්‍රකාශ',
-      date: 'Thursday, 24 October 2024 - 8:16',
-      url: 'https://www.hirunews.lk/385888/කැලණිය-සරසවි-සිසුවාගේ-මරණය-සම්බන්ධයෙන්-සිසුන්-21-දෙනෙකුගෙන්-ප්‍රකාශ'
-    },
-    {
-      title: 'යාපනයේ මහමැතිවරණ අපේක්ෂකයෙකු හදිසියේම මියයයි',
-      date: 'Thursday, 24 October 2024 - 8:05',
-      url: 'https://www.hirunews.lk/385887/යාපනයේ-මහමැතිවරණ-අපේක්ෂකයෙකු-හදිසියේම-මියයයි'
-    },
-    {
-      title: 'නැන්දම්මාගේ මළගෙදර ආව බෑණා රිය අනතුරකින් ජීවිතක්ෂයට',
-      date: 'Thursday, 24 October 2024 - 7:26',
-      url: 'https://www.hirunews.lk/385883/නැන්දම්මාගේ-මළගෙදර-ආව-බෑණා-රිය-අනතුරකින්-ජීවිතක්ෂයට'
-    },
-    {
-      title: 'තුර්කියේ අභ්‍යවකාශ ආයතනයකට එල්ල වූ ප්‍රහාරයකින් පස් දෙනෙකුට ජීවිතක්ෂයට',
-      date: 'Thursday, 24 October 2024 - 7:22',
-      url: 'https://www.hirunews.lk/385882/තුර්කියේ-අභ්‍යවකාශ-ආයතනයකට-එල්ල-වූ-ප්‍රහාරයකින්-පස්-දෙනෙකුට-ජීවිතක්ෂයට'
-    },
-    {
-      title: 'ඊශ්‍රායල ජාතිකයින්ට ප්‍රහාරයක් එල්ල කිරීමට සැලසුම් කළ බව කියන පුද්ගලයින් දෙදෙනෙකු අත්අඩංගුවට',
-      date: 'Thursday, 24 October 2024 - 6:39',
-      url: 'https://www.hirunews.lk/385878/ඊශ්‍රායල-ජාතිකයින්ට-ප්‍රහාරයක්-එල්ල-කිරීමට-සැලසුම්-කළ-බව-කියන-පුද්ගලයින්-දෙදෙනෙකු-අත්අඩංගුවට'
-    },
-    {
-      title: 'දිවයිනේ ඇතැම් ප්‍රදේශවලට අදත් මි.මී. 50ට වඩා වැසි',
-      date: 'Thursday, 24 October 2024 - 6:21',
-      url: 'https://www.hirunews.lk/385877/දිවයිනේ-ඇතැම්-ප්‍රදේශවලට-අදත්-මි-මී-50ට-වඩා-වැසි'
-    },
-    {
-      title: 'හිටපු ජනපති රනිල් රජයෙන් කළ ඉල්ලීම',
-      date: 'Wednesday, 23 October 2024 - 23:48',
-      url: 'https://www.hirunews.lk/385875/හිටපු-ජනපති-රනිල්-රජයෙන්-කළ-ඉල්ලීම'
-    }
-  ]
+import Hiru = require('hirunews-scrap');
+
+const api = new Hiru({ userAgent: 'MyBot/1.0' });
+
+async function main() {
+  const res = await api.BreakingNews();
+  console.log(res.results.title);
+}
+
+main();
+```
+
+## Options
+
+All options available in `utils/options.js` can be passed to `new Hiru({...})`. Key items:
+
+- `timeout` (ms) — request timeout
+- `maxRetries` — retry attempts
+- `retryDelay` — base delay between retries (ms)
+- `headers` — default HTTP headers (deep-merged)
+- `userAgent` / `ua` — shorthand aliases for `headers['User-Agent']`
+- `followRedirects` — follow 3xx redirects
+- `validateStatus` — function to validate HTTP status codes
+- `rateLimit` — requests per second
+- `proxy` — string (e.g. `http://user:pass@host:8080`) or axios-style object
+- `rotateUserAgent` — enable UA rotation
+- `cache` — `true` or `{ ttl, maxSize }`
+
+Notes:
+
+- `headers` from your options are deep-merged with library defaults.
+- `proxy` accepts a URL string (auto-parsed) or an object with `{ host, port, protocol, auth }`.
+- Options passed to `new Hiru({...})` are applied when the instance is constructed; create a new instance to change defaults at runtime.
+
+## Error handling
+
+Library errors are structured and include `name`, `code`, `message` and optional `meta`.
+Check `err.code` or `err.name` when catching errors:
+
+```js
+try {
+  await api.MainNews();
+} catch (err) {
+  console.error(err.code || err.name, err.message);
+  if (err.meta) console.debug('meta:', err.meta);
 }
 ```
 
-## Get Latest Breaking News
-```ts
+## API
+
+### Get Latest Breaking News
+
+```js
 const News = await api.BreakingNews();
 console.log(News);
 ```
 
-
-```ts
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'රාජිතට එරෙහි නඩුවේ තීන්දුව ප්‍රකාශ කිරීම නොවැම්බර් 29 වැනිදා',
-    news: '\n' +
-      '2019 වසරේ පැවැති ජනාධිපතිවරණ සමයේ මාධ්‍ය සාකච්ඡාවක් පවත්වා සුදු වෑන්වලින් පුද්ගලයින් පැහැරගෙන යාම, කප්පම් ගැනීම, මරා දැමීම යන චෝදනා එල්ල කරමින් එවක ජනාධිපති අපේක්ෂක ගෝඨාභය රාජපක්ෂට අගතියක් සිදු කළේ යැයිචෝදනා ලබා සිටි හිටපු සෞඛ්‍ය අමාත්‍ය රාජිත සේනාරත්න සහ රාජ්‍ය ඖෂධ නීතිගත සංස්ථාවේ හිටපු සභාපති මොහමඩ් රූමි යන විත්තිකරුවන් විත්තියේ සාක්ෂි කැඳවීමකින් තොරව නිදහස් කරන ලෙස කර තිබෙන ඉල්ලීම පිළිබඳ නියෝගය ප්‍රකාශ කිරීම නොවැම්බර් මස 29 වන දා දක්වා කල් තැබීමට කොළඹ මහාධිකරණය නියම කර තිබෙනවා. \n' +
-      ' \n' +
-      'මෙම නියෝගය අද (24) කොළඹ මහාධිකරණ විනිසුරු සුජීව නිශ්ශංක විසින් ප්‍රකාශයට පත් කිරීමට නියමිතව තිබුණා.  \n' +
-      ' \n' +
-      'එහෙත් නඩුව කැඳවූ අවස්ථාවේදී විනිසුරුවරයා සඳහන් කළේ නඩු තීන්දුව සූදානම් නොමැති බවයි. \n' +
-      ' \n' +
-      'ඒ අනුව නඩු තීන්දුව නොවැම්බර් මස 29 වනදා ප්‍රකාශයට පත්කරන බවත් විනිසුරුවරයා නියෝග කළා. \n' +
-      ' \n' +
-      '2019 නොවැම්බර් 10 වනදා කොළඹ පැවති අදාළ මාධ්‍ය සාකච්ඡාව හරහා එවක ජනාධිපති අපේක්ෂක ගෝඨාභය රාජපක්ෂට අගතියක් සිදු කිරීමේ අරමුණින් බොරු සාක්ෂි නිර්මාණය කිරීම , ජනාධිපතිවරණයේ ප්‍රතිඵලවලට බලපෑමක් ඇතිවිය හැකි ආකාරයේ දූෂිත ක්‍රියාවක් සිදු කිරීම සම්බන්ධයෙන් දණ්ඩ නීති සංග්‍රහය යටතේ හිටපු අමාත්‍ය රාජිත සේනාරත්න සහ රාජ්‍ය ඖෂධ නීතිගත සංස්ථාවේ හිටපු සභාපති මොහොමඩ් රූමි යන විත්තිකරුවන් දෙදෙනාට එරෙහිව ජනාධිපතිවරණය පනත් සහ දණ්ඩ නීති සංග්‍රහය යටතේ මෙම විත්තිකරුවන්ට එරෙහිව නීතිපතිවරයා විසින් මෙම නඩුව ගොනුකර තිබුණා.                    ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1729749426_3059902_hirunews.jpg',
-    extraImages: [],
-    date: 'Thursday, 24 October 2024 - 11:27',
-    newsURL: 'https://www.hirunews.lk/385906/%E0%B6%BB%E0%B7%8F%E0%B6%A2%E0%B7%92%E0%B6%AD%E0%B6%A7-%E0%B6%91%E0%B6%BB%E0%B7%99%E0%B7%84%E0%B7%92-%E0%B6%B1%E0%B6%A9%E0%B7%94%E0%B7%80%E0%B7%9A-%E0%B6%AD%E0%B7%93%E0%B6%B1%E0%B7%8A%E0%B6%AF%E0%B7%94%E0%B7%80-%E0%B6%B4%E0%B7%8A%E2%80%8D%E0%B6%BB%E0%B6%9A%E0%B7%8F%E0%B7%81-%E0%B6%9A%E0%B7%92%E0%B6%BB%E0%B7%93%E0%B6%B8-%E0%B6%B1%E0%B7%9C%E0%B7%80%E0%B7%90%E0%B6%B8%E0%B7%8A%E0%B6%B6%E0%B6%BB%E0%B7%8A-29-%E0%B7%80%E0%B7%90%E0%B6%B1%E0%B7%92%E0%B6%AF%E0%B7%8F'
+  "results": {
+    "title": "රාජිතට එරෙහි නඩුවේ තීන්දුව ප්‍රකාශ කිරීම නොවැම්බර් 29 වැනිදා",
+    "news": "2019 වසරේ පැවැති ජනාධිපතිවරණ සමයේ...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1729749426_3059902_hirunews.jpg",
+    "date": "Thursday, 24 October 2024 - 11:27",
+    "newsURL": "https://www.hirunews.lk/385906/රාජිතට-එරෙහි-නඩුවේ-තීන්දුව-ප්‍රකාශ-කිරීම-නොවැම්බර්-29-වැනිදා"
   }
 }
 ```
-## Get Latest Main News
-```ts
+
+### Get Latest Main News
+
+```js
 const News = await api.MainNews();
 console.log(News);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'ඊශ්‍රායල ජාතිකයින්ට ප්‍රහාරයක් එල්ල කිරීමට සැලසුම් කළ බව කියන පුද්ගලයින් දෙදෙනෙකු අත්අඩංගුවට',
-    news: '\n' +
-      'මෙරට රැදී සිටින ඊශ්‍රායල ජාතිකයන්ට ප්‍රහාරයක් එල්ල කිරීමට සැලසුම් කළ බව කියන පුද්ගලයින් දෙදෙනෙකු ත්‍රස්ත විමර්ශන කොට්ඨාසය මගින් අත්අඩංගුවට ගෙන තිබෙනවා. \n' +
-      ' \n' +
-      'ඉන් එක් අයෙකු යාපනය ප්‍රදේශයේ පදිංචිකරුවෙකු වන අතර අනෙක් පුද්ගලයා කොළඹ ප්‍රදේශයේ පදිංචිකරුවෙකු වනවා.  \n' +
-      ' \n' +
-      'ඔහුගේ පියා මාලදිවයින් ජාතිකයෙකු වන අතර මව මෙරට කාන්තාවක් බවයි අනාවරණය වුණේ. \n' +
-      ' \n' +
-      'ඊශ්‍රායලය මැදපෙරදිග කලාපයේ හමාස් සහ හිස්බුල්ලා සංවිධානයට එරෙහිව දියත් කරනු ලබන ප්‍රහාරවලට පලිගැනීමක් ලෙස මෙරටට පැමිණ සිටින ඊශ්‍රායල ජාතිකයන් ඉලක්ක කර මෙම ප්‍රහාරය සැලසුම් කර ඇති බව සඳහන්. \n' +
-      ' \n' +
-      'එසේම මොවුන්ට සහය දක්වන ජාලය හදුනා ගැනීමට සඳහා පොලිසිය මේ වනවිට පුළුල් පරීක්ෂයක් ආරම්භ කර තිබෙනවා.  \n' +
-      ' \n' +
-      'මෙවැනි ප්‍රහාරයක් සම්බන්ධයෙන් ඊයේ මුල්වරට අනාවරණය කළේ කොළඹ පිහිටි ඇමරිකානු තානාපති කාර්යාලය මගින්.  \n' +
-      ' \n' +
-      'අනතුරු ඇගවීමේ නිවේදනයක් නිකුත් කරමින් මෙරට ඇමරිකානු තානාපති කාර්යාලය සිය පුරවැසියන්ට දැනුම් දුන්නේ ප්‍රහාරයක් එල්ල විය හැකි බැවින් ආරුගම්බේ ප්‍රදේශයේ සංචාරය නොකරන ලෙසටයි. \n' +
-      ' \n' +
-      'මෙම නිවේදනය පදනම් කර ගනිමින් තවත් රටවල් රැසක් ශ්‍රී ලංකාව සඳහා වන සංචාරක උපදෙස් මාලාවක් යාවත්කාලීන කිරිමට පියවර ගනු ලැබුවා. ඒ අතර බ්‍රිතාන්‍ය, නවසීලන්තය, ඕස්ට්‍රේලියාව, කැනඩාව සහ රුසියාවද ඇතුළත්. \n' +
-      ' \n' +
-      'මෙම තත්ත්වය මත කටුනායක ගුවන්තොටුපල මෙන්ම මෙරට සංචාරක කලාප ආශ්‍රිතව ආරක්ෂාව දැඩි කිරීමට පොලිසිය ඊයේ පියවර ගත්තා.  \n' +
-      ' \n' +
-      'ආරුගම්බේ ප්‍රදේශයට අමතරව පොතුවිල්, මිරිස්ස, වැලිගම, අහංගම, මිදිගම, හික්කඩුව, හබරාදුව, බෙන්තොට, ගාල්ල ත්‍රිකුණාමලය, මීගමුව, නිලාවේලි, මඩකලපුව ඇතුළු ප්‍රදේශ රැසක මෙලෙස ආරක්ෂාව තර කර තිබෙනවා.  \n' +
-      ' \n' +
-      'එමෙන්ම ඊශ්‍රායාල ජාතික ආරක්ෂක කවුන්සලය මෙරට රැදී සිටින සිය පුරවැසියන්ට ඊයේ පස්වරුවේ දැනුම් දුන්නේ, ආරුගම්බේ ආශ්‍රිතව සහ දකුණු සහ බටහිරින් පිහිටි අනෙකුත් වෙරළ තීරවලින් වහාම ඉවත් වන ලෙසයි. ඒ අනුව, රටින් පිටවන ලෙස හෝ අවම වශයෙන් කොළඹ නගරයට පැමිණෙන ලෙසත් සෙසු ප්‍රදේශවල සංචාරය කිරීමද කල් දමන දැනුම් සී තිබුණා. \n' +
-      ' \n' +
-      'මේ අතර මෙවැනි ප්‍රහාරයක් පිළිබඳ තොරතුරු ලැබුණේ මීට සති දෙකකට පමණ පෙර බව වැඩබලන පොලිස්පති ප්‍රියන්ත වීරසූරිය කියා සිටියේ ඊයේ ප්‍රවෘත්ති සාකච්ඡාවක් කැඳවමින්.  \n' +
-      ' \n' +
-      'එහිදී ඔහු කියා සිටියේ ආරක්ෂක කවුන්සලයේදී ද මේ සම්බන්ධයෙන් සාකච්ඡා කර ආරක්ෂාව තහවුරු කිරීමට වැඩපිළිවෙළක් කඩිනමින් දියත් කළ බවයි. \n' +
-      ' \n' +
-      'කෙසේවෙතත් සංචාරක ප්‍රවර්ධන කාර්යාංශය නිවේදනයක් නිකුත් කරමින් ප්‍රකාශ කළේ ආරක්ෂාව තහවුරු කර ඇති බැවින් මෙරට සංචාරය කරන ලෙස සියලු විදෙස් රටවල සංචාරකයන්ට ආරාධනා කරන බවයි.                    ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1729732149_1977919_hirunews.jpg',
-    extraImages: [],
-    date: 'Thursday, 24 October 2024 - 6:39',
-    newsURL: 'https://www.hirunews.lk/385878/ඊශ්‍රායල-ජාතිකයින්ට-ප්‍රහාරයක්-එල්ල-කිරීමට-සැලසුම්-කළ-බව-කියන-පුද්ගලයින්-දෙදෙනෙකු-අත්අඩංගුවට'
+  "results": {
+    "title": "ඊශ්‍රායල ජාතිකයින්ට ප්‍රහාරයක් එල්ල කිරීමට සැලසුම් කළ බව කියන පුද්ගලයින් දෙදෙනෙකු අත්අඩංගුවට",
+    "news": "මෙරට රැදී සිටින ඊශ්‍රායල ජාතිකයන්ට ප්‍රහාරයක් එල්ල කිරීමට සැලසුම් කළ...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1729732149_1977919_hirunews.jpg",
+    "date": "Thursday, 24 October 2024 - 6:39",
+    "newsURL": "https://www.hirunews.lk/385878/ඊශ්‍රායල-ජාතිකයින්ට-ප්‍රහාරයක්-එල්ල-කිරීමට-සැලසුම්-කළ-බව-කියන-පුද්ගලයින්-දෙදෙනෙකු-අත්අඩංගුවට"
   }
 }
 ```
-## Get Latest Trending News
 
-```ts
+### Get Latest Trending News
+
+```js
 const News = await api.TrendingNews();
 console.log(News);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'ශ්‍රී ලංකාවේ බටහිර හා නැගෙනහිර වෙරළ තීරවලින් ඉවත් වන්නැයි, ඊශ්‍රායලය සිය ජනතාවගෙන් ඉල්ලයි (වීඩියෝ)',
-    news: '\n' +
-      'පවත්නා තර්ජන හේතු කොටගෙන ශ්‍රී ලංකාවේ සංචාරක නිකේතනවලින් ඉවත් වන ලෙස ඊශ්‍රායලය සිය පුරවැසියන්ගෙන් ඉල්ලා සිටිනවා. \n' +
-      ' \n' +
-      'ඒ අනුව කිසියම් ප්‍රහාරයක තර්ජන හේතු කර ගනිමින් ශ්‍රී ලංකාවේ ආරුගම් බොක්ක ප්‍රදේශයෙන් සහ දිවයිනේ දකුණේ සහ බටහිරින් පිහිටි අනෙකුත් වෙරළ තීරයන්ගෙන් වහාම ඉවත් වන ලෙස‍යි ඊශ්‍රායල ජාතික ආරක්ෂක මණ්ඩලය සිය ජාතිකයන්ගෙන් ඉල්ලා සිටින්නේ. \n' +
-      ' \n' +
-      '"මෙම ප්‍රදේශවලින් පිටව යන අයට රට හැර යාමට උපදෙස් දෙන අතර, නැතහොත් අවම වශයෙන් ප්‍රාදේශීය ආරක්ෂක හමුදාවන් ඉහළ මට්ටමක සිටින කොළඹ අගනුවරට යන ලෙස" ඊශ්‍රායල ජාතික ආරක්ෂක මණ්ඩලය සිය ජාතිකයන්ට නිවේදනයක් මගින් දැනුම් දෙනවා. \n' +
-      ' \n' +
-      ' \n' +
-      '\n' +
-      '                    ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1729682513_1674880_hirunews.jpg',
-    extraImages: [],
-    date: 'Wednesday, 23 October 2024 - 16:52',
-    newsURL: 'https://www.hirunews.lk/385838/ශ්‍රී-ලංකාවේ-බටහිර-හා-නැගෙනහිර-වෙරළ-තීරවලින්-ඉවත්-වන්නැයි-ඊශ්‍රායලය-සිය-ජනතාවගෙන්-ඉල්ලයි-වීඩියෝ'
+  "results": {
+    "title": "ශ්‍රී ලංකාවේ බටහිර හා නැගෙනහිර වෙරළ තීරවලින් ඉවත් වන්නැයි, ඊශ්‍රායලය සිය ජනතාවගෙන් ඉල්ලයි (වීඩියෝ)",
+    "news": "පවත්නා තර්ජන හේතු කොටගෙන ශ්‍රී ලංකාවේ සංචාරක නිකේතනවලින් ඉවත් වන ලෙස...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1729682513_1674880_hirunews.jpg",
+    "date": "Wednesday, 23 October 2024 - 16:52",
+    "newsURL": "https://www.hirunews.lk/385838/ශ්‍රී-ලංකාවේ-බටහිර-හා-නැගෙනහිර-වෙරළ-තීරවලින්-ඉවත්-වන්නැයි-ඊශ්‍රායලය-සිය-ජනතාවගෙන්-ඉල්ලයි-වීඩියෝ"
   }
 }
 ```
-## Get Latest International News
 
-```ts
+### Get Latest International News
+
+```js
 const News = await api.InternationalNews();
 console.log(News);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'පිටසක්වල ජීවීන් සොයා උඩුගුවනට යන අභ්‍යවකාශ යානය',
-    news: '\n' +
-      'පිටසක්වල ජීවීන්ගේ සලකුණු සෙවීම සඳහා ෆ්ලොරීඩාවෙන් Europa Clipper නම්, අභ්‍යවකාශ යානය පිටත්වීමට නියමිත බව නාසා ආයතනය පවසනවා. \n' +
-      ' \n' +
-      'එහි ගමනාන්තය, බ්‍රහස්පති ග්‍රහයා වටා කක්ෂගතවන ගැඹුරු චන්ද්‍රයෙකු බව සඳහන්. \n' +
-      ' \n' +
-      'එය බ්‍රහස්පතිගේ චන්ද්‍රයා Europa ලෙස නම් කර තිබෙනවා. \n' +
-      ' \n' +
-      'නාසා විද්‍යාඥයින් සැක පළ කරන්නේ, පෘථිවියේ ජල ප්‍රමාණය මෙන් දෙගුණයක් විශාල සාගරයක් ඒ මත තිබිය හැකි බවයි.                    ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1728921378_9976226_hirunews.jpg',
-    extraImages: [],
-    date: 'Monday, 14 October 2024 - 21:26',
-    newsURL: 'https://www.hirunews.lk/384964/පිටසක්වල-ජීවීන්-සොයා-උඩුගුවනට-යන-අභ්‍යවකාශ-යානය'
+  "results": {
+    "title": "පිටසක්වල ජීවීන් සොයා උඩුගුවනට යන අභ්‍යවකාශ යානය",
+    "news": "පිටසක්වල ජීවීන්ගේ සලකුණු සෙවීම සඳහා ෆ්ලොරීඩාවෙන් Europa Clipper නම් අභ්‍යවකාශ යානය...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1728921378_9976226_hirunews.jpg",
+    "date": "Monday, 14 October 2024 - 21:26",
+    "newsURL": "https://www.hirunews.lk/384964/පිටසක්වල-ජීවීන්-සොයා-උඩුගුවනට-යන-අභ්‍යවකාශ-යානය"
   }
 }
 ```
 
-## Get Latest Sport News
+### Get Latest Sport News
 
-```ts
+```js
 const News = await api.SportNews();
 console.log(News);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'නවසීලන්ත සහ ශ්‍රී ලංකාව අතර පැවැත්වීමට නියමිත ක්‍රිකට් තරගාවලියේ කාල සටහන නිකුත් කෙරේ',
-    news: '\n' +
-      'සංචාරක නවසීලන්ත සහ ශ්‍රී ලංකා ක්‍රිකට් කණ්ඩායම් අතර පැවැත්වීමට නියමිත ක්‍රිකට් තරගාවලියේ කාල සටහන නිකුත් කර තිබෙනවා. \n' +
-      ' \n' +
-      'T20 තරග දෙකකින් සහ එක්දින තරග 3 කින් සමන්විත මෙම තරගාවලිය එළැඹෙන නොවැම්බර් මස 9 වෙනිදා ආරම්භවීමට නියමිතයි. \n' +
-      ' \n' +
-      'මෙහි තරග දඹුල්ල සහ පල්ලෙකැලේ ක්‍රීඩාංගන වලදී පැවැත්වීමට සූදානම් කර තිබෙනවා. \n' +
-      '\n' +
-      '\n' +
-      '\n' +
-      ' ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1728927505_8411631_hirunews.jpg',
-    extraImages: [],
-    date: 'Monday, 14 October 2024 - 23:18',
-    newsURL: 'https://www.hirunews.lk/sports/384971/නවසීලන්ත-සහ-ශ්‍රී-ලංකාව-අතර-පැවැත්වීමට-නියමිත-්‍රිකට්-තරගාවලියේ-කාල-සටහන-නිකුත්-කෙරේ'
+  "results": {
+    "title": "නවසීලන්ත සහ ශ්‍රී ලංකාව අතර පැවැත්වීමට නියමිත ක්‍රිකට් තරගාවලියේ කාල සටහන නිකුත් කෙරේ",
+    "news": "සංචාරක නවසීලන්ත සහ ශ්‍රී ලංකා ක්‍රිකට් කණ්ඩායම් අතර පැවැත්වීමට නියමිත...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1728927505_8411631_hirunews.jpg",
+    "date": "Monday, 14 October 2024 - 23:18",
+    "newsURL": "https://www.hirunews.lk/sports/384971/නවසීලන්ත-සහ-ශ්‍රී-ලංකාව-අතර-පැවැත්වීමට-නියමිත-ක්‍රිකට්-තරගාවලියේ-කාල-සටහන-නිකුත්-කෙරේ"
   }
 }
 ```
 
-## Get Latest Entertainment News
+### Get Latest Entertainment News
 
-```ts
+```js
 const News = await api.EntertainmentNews();
 console.log(News);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'Elon Muskගේ නවතම දොර දෙකේ රොබෝටැක්සිය (ඡායාරූප)',
-    news: '\n' +
-      'එලෝන් මස්ක්, දොරවල් දෙකක් සහ සුක්කානම් රෝදයක් හෝ පැඩල් නොමැති රොබෝටැක්සියක් හඳුනවා දී තිබෙනවා.\n' +
-      ' \n' +
-      'නවතම ටෙස්ලා නිෂ්පාදනය ලෙසින් මෙය හඳුන්වා දුන් මස්ක් පවසන්නේ, විදුලි වාහන නිෂ්පාදනයෙන් දැන් රොබෝ වාහන නිෂ්පාදනයට වැඩි ඉඩක් ලබා දෙන බවයි.\n' +
-      '\n' +
-      'මෙම දොර දෙකේ රොබෝටැක්සිය 2026 දී , නිෂ්පාදන කෙරෙන බවත් එහි මිල ඩොලර් 30,000 ට වඩා අඩු වනු ඇති බවත්, ඔහු මෙහිදී සඳහන් කළා. \n' +
-      ' \n' +
-      ' \n' +
-      ' \n' +
-      ' \n' +
-      ' \n' +
-      ' ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1728638540_9280318_hirunews.jpg',
-    extraImages: [],
-    date: 'Friday, 11 October 2024 - 14:52',
-    newsURL: 'https://www.hirunews.lk/entertainment/384617/elon-muskගේ-නවතම-දොර-දෙකේ-රොබෝටැක්සිය-ඡායාරූප'
+  "results": {
+    "title": "Elon Muskගේ නවතම දොර දෙකේ රොබෝටැක්සිය (ඡායාරූප)",
+    "news": "එලෝන් මස්ක්, දොරවල් දෙකක් සහ සුක්කානම් රෝදයක් හෝ පැඩල් නොමැති රොබෝටැක්සියක් හඳුනවා දී තිබෙනවා...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1728638540_9280318_hirunews.jpg",
+    "date": "Friday, 11 October 2024 - 14:52",
+    "newsURL": "https://www.hirunews.lk/entertainment/384617/elon-muskගේ-නවතම-දොර-දෙකේ-රොබෝටැක්සිය-ඡායාරූප"
   }
 }
 ```
 
-## Get Latest Business News
+### Get Latest Business News
 
-```ts
+```js
 const News = await api.BusinessNews();
 console.log(News);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: 'ලොවක් බලා සිටි iPhone 16 මිල ගණන් මෙන්න',
-    news: '\n' +
-      'ඇපල් සමාගම iPhone 16 මාදිලිය ඊයේ නිල වශයෙන් වෙලඳපොළට නිකුත් කරනු ලැබුවා. \n' +
-      ' \n' +
-      'ඒ කැලිෆෝනියාවේ Cupertino හි Apple Park හිදී පැවැත්වෙන වාර්ෂික උළෙලේදී. \n' +
-      ' \n' +
-      'එම දුරකථන මාදිලිය ගැන සම්පූර්ණ විස්තරය පහතින්. \n' +
-      ' \n' +
-      'iPhone 16 සහ iPhone 16 plus : \n' +
-      'පෙළ ගැස්මේ පලමු දුරකථනය දෙක ලෙස නිකුත් කල මෙය සිරස් කැමරා දෙකකින් යුක්තව නිකුත් කර ඇති අතර මීට පෙර තිබූ නිශ්ශබ්ද කිරීමේ ස්විචය වෙනුවෙනට මෙම දුරකථනය සඳහා iPhone 15 pro මාදිලියේ තිබූ ක්‍රියා බොත්තමට(Action button) ප්‍රතිස්ථාපනය කර තිබෙනවා. එමෙන්ම උපාංගයේ දකුණු පැත්තේ, ඡායාරූප සහ වීඩියෝ සඳහා නව ස්පර්ශ සංවේදී කැමරා පාලනය බොත්තමක් හඳුන්වා දී තිබෙනවා. \n' +
-      ' \n' +
-      'Apple හි නව A18 චිපය මගින් බලගැන්වෙන මෙම දුරකථන දෙක සඳහා Apple Intelligence විශේෂාංග වඩා හොඳින් හැසිරවීමට වැඩිදියුණු කරන ලද 16-core Neural Engine සැකසුමක් මගින් මෙම චිපය බලගැන්වෙනවා. \n' +
-      ' \n' +
-      'iPhone 16 සඳහා අඟල් 6.1 ක තිරයක් මෙන්ම වූ පරිදි 8GB RAM සහ 128GB සිට 512GB අතර storage පහසුකමක් ඇත. 48MP ප්‍රාථමික කැමරාවක් (එය 12MP, 2X ඩිජිටල් ටෙලිෆොටෝ ලෙස දෙගුණ කිරීමේ හැකියාව සහිත) 12MP ඉදිරිපස සහ සාර්ව ඡායාරූපකරණය එක් කරන උත්ශ්‍රේණිගත කරන ලද ultrawide කැමරාවක්ද ඇත.එමෙන්ම 3,561mAh බැටරියක් මෙම iPhone 16 සඳහා ලබා දී ඇත. \n' +
-      ' \n' +
-      'iPhone 16 plus සඳහා අඟල් 6.7 ක තිරයක් සහ 4,000mAh බැටරියක් ලබා දී තිබෙනවා.අනෙක් සියල්ල iPhone 16 ට සමාන වේ. \n' +
-      ' \n' +
-      'මෙම දුරකථන දෙක සඳහා කළු, සුදු, රෝස, කොළ සහ ultramarine නිල් යන වර්ණයන්ගෙන් නිකුත් කර තිබෙනවා. \n' +
-      ' \n' +
-      'iPhone 16 ඩොලර් 799 සහ iPhone 16 plus ඩොලර් 899 ක මිලකින් ආරම්භ වනවා. \n' +
-      ' \n' +
-      'iPhone 16 Pro සහ iPhone 16 Pro Max : \n' +
-      'Apple හි දියත් කරන ලද Pro මාදිලි සඳහා වූ විශාල තිරය මෙම දුරකථන දෙකට ලබා දී තිබෙනවා,ඒ iPhone 16 Pro සඳහා අඟල් 6.3 ක් සහ iPhone 16 Pro Max සඳහා අඟල් 6.9 ක තිරයකි. නිශ්ශබ්ද කිරීමේ ස්විචය වෙනුවෙනට මෙම දුරකථනය සඳහා iPhone 15 pro මාදිලියේ තිබූ ක්‍රියා බොත්තමට(Action button) ප්‍රතිස්ථාපනය කර තිබෙන අතර උපාංගයේ දකුණු පැත්තේ, ඡායාරූප සහ වීඩියෝ සඳහා නව ස්පර්ශ සංවේදී කැමරා පාලනය බොත්තමද එකතු කර තිබෙනවා. \n' +
-      ' \n' +
-      'වැඩි දියුණු කළ කැමරා තුනකින් සමන්විත පද්ධතිය සඳහා 48MP ප්‍රධාන කැමරාව සහ 48MP ultrawide කැමරාවක් ලබා දී ඇත,මෙය 5X විශාලනකින් සමන්විත අතර පෙර Pro මාදිලියන්ගේ පරිදි ටෙලිෆොටෝ කැමරාවක්ද ඇත. ප්‍රාථමික කැමරාවට බොඳවීම අවම කරන වේගවත් දත්ත කියවීම් සහිත විශාල, දෙවන පරම්පරාවේ සංවේදකයක් ඇත.  \n' +
-      ' \n' +
-      'මෙම කැමරාව සඳහා පෙර මෙන් ඡායාරූප මෝස්තර පරාසයකින් තෝරා ගැනීමට පමණක් නොව, අතථ්‍ය පෑඩ්( virtual pad) සමඟ ඒවා අභිරුචිකරණය(customize) කළ හැකිය. Dolby Vision HDR සමඟින් 120FPS හි 4K වීඩියෝ ග්‍රහණය කර ගැනීමටත්, මන්දගාමී චලිතයේ(slow motion) සිට චිත්‍රපටක් රූගතකිරීමකට වැනි වැනි 24FPS දක්වා ඕනෑම දෙයක් පටිගත කිරීමේ හැකියාවක් මෙම කැමරා පද්ධතිය සතුව ඇත.  \n' +
-      ' \n' +
-      'A18 pro චිපය මගින් බලගැන්වෙන මෙම දුරකථන දෙක සඳහා Apple Intelligence විශේෂාංග වඩා හොඳින් හැසිරවීමට වැඩිදියුණු කරන ලද 16-core Neural Engine සැකසුමක් මගින් මෙම චිපය බලගැන්වෙනවා.එමගින් මාධ්‍ය පටිගත කිරීම සහ දෘශ්‍ය බුද්ධිය සඳහා ග්‍රහණ පාලන‍යේ හැකියාවද ඇත.මෙම දුරකථන දෙක සඳහා 8GB RAM සහ 2TB දක්වා storage පහසුකමක් ඇත. \n' +
-      ' \n' +
-      'iPhone 16 Pro සහ iPhone 16 Pro Max සඳහා 3,355mAh බැටරියක් ලබා දී ඇති අතර එමගින් වැඩි බැටරි ආයුකාලයක් ලබා දී තිබෙනවා. \n' +
-      ' \n' +
-      'මෙම දුරකථන දෙක සඳහා කළු, අළු සහ සුදු වර්ණ වලින් පැමිණෙන අතර නවතම රන්වන් පැහැයෙන් යුත් Desert Titanium වර්ණයෙන් ද එකතු කර වෙලඳ පොලට නිකුත් කර තිබෙනවා. \n' +
-      ' \n' +
-      'iPhone 16 Pro(128GB) ඩොලර් 999 සහ iPhone 16 Pro Max(128GB) ඩොලර් 1199 ක මිලකින් ආරම්භ වනවා. \n' +
-      ' \n' +
-      'එමෙන්ම නව AirPods 4 ඩොලර් 129 ක් මිලවන අතර සක්‍රීය ශබ්ද අවලංගු කිරීමේ විශේෂාංගය සහිත AirPods 4 ඩොලර් 179 ක්. \n' +
-      ' \n' +
-      'සමාගමට අනුව Apple හි නව Series 10 ඔරලෝසුව ඩොලර් 399 කින් ආරම්භ වනවා. \n' +
-      ' \n' +
-      'නමුත් මේ සියල්ල පෙර-ඇණවුම් කර සැප්තැම්බර් 20 න් පසුව ලබා ගන්න පුළුවන්.                        \n' +
-      '          \n' +
-      '        ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202409/1725984481_5709076_hirunews.jpg',
-    extraImages: [],
-    date: 'Tuesday, 10 September 2024 - 19:31',
-    newsURL: 'https://www.hirunews.lk/business/381534/ලොවක්-බලා-සිටි-iphone-16-මිල-ගණන්-මෙන්න'
+  "results": {
+    "title": "ලොවක් බලා සිටි iPhone 16 මිල ගණන් මෙන්න",
+    "news": "ඇපල් සමාගම iPhone 16 මාදිලිය ඊයේ නිල වශයෙන් වෙලඳපොළට නිකුත් කරනු ලැබුවා...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202409/1725984481_5709076_hirunews.jpg",
+    "date": "Tuesday, 10 September 2024 - 19:31",
+    "newsURL": "https://www.hirunews.lk/business/381534/ලොවක්-බලා-සිටි-iphone-16-මිල-ගණන්-මෙන්න"
   }
 }
 ```
 
+### Get News
 
-## Get News
-
-```ts
+```js
 const result = await api.getNews("https://www.hirunews.lk/385920/ට්‍රෑමි-සුළිකුණාටුවෙන්-පිලිපීන‍යේ-26-දෙනෙකු-ජීවිතක්ෂයට");
-console.log(result);    
+console.log(result);
 ```
-```ts
+
+```json
 {
-  code: 200,
-  code_creator: {
-    name: 'Omindu_Dissanayaka',
-    github: '@OmiduAnjane',
-    group: 'Nex Dev Group'
+  "code": 200,
+  "code_creator": {
+    "name": "Omindu_Dissanayaka",
+    "github": "@OminduDissanayaka",
+    "website": "https://www.omindu.dev"
   },
-  results: {
-    title: '’ට්‍රෑමි’ සුළිකුණාටුවෙන් පිලිපීන‍යේ 26 දෙනෙකු ජීවිතක්ෂයට',
-    news: '\n' +
-      'පිලිපීනයට බලපා ඇති ’ට්‍රෑමි’ සුළිකුණාටුව හේතුවෙන් පුද්ගලයන් 26 දෙනෙකු ජීවිතක්ෂයට පත්ව 150,000 කට වැඩි පිරිසක් පීඩාවට පත්ව සිටිනවා.  \n' +
-      ' \n' +
-      'විදෙස් මාධ්‍ය වාර්තා කළේ, එරට කෝඩිලෙරා හි කඳුකර ප්‍රදේශයට සුළිකුණාටුව ගමන් කර ඇති බවයි.  \n' +
-      ' \n' +
-      'ඒ අනුව, එම ප්‍රදේශයේ පාසල් සහ ව්‍යාපාරික ස්ථාන වසා දැමීමට එරට රජය කටයුතු කර තිබෙනවා.                    ',
-    thumb: 'https://cdn.hirunews.lk/Data/News_Images/202410/1729759421_6149283_hirunews.jpg',
-    extraImages: [],
-    date: 'Thursday, 24 October 2024 - 14:14',
-    newsURL: 'https://www.hirunews.lk/385920/ට්‍රෑමි-සුළිකුණාටුවෙන්-පිලිපීන‍යේ-26-දෙනෙකු-ජීවිතක්ෂයට'
+  "results": {
+    "title": "ට්‍රෑමි සුළිකුණාටුවෙන් පිලිපීන‍යේ 26 දෙනෙකු ජීවිතක්ෂයට",
+    "news": "පිලිපීනයට බලපා ඇති ට්‍රෑමි සුළිකුණාටුව හේතුවෙන් පුද්ගලයන් 26 දෙනෙකු ජීවිතක්ෂයට පත්ව...",
+    "thumb": "https://cdn.hirunews.lk/Data/News_Images/202410/1729759421_6149283_hirunews.jpg",
+    "date": "Thursday, 24 October 2024 - 14:14",
+    "newsURL": "https://www.hirunews.lk/385920/ට්‍රෑමි-සුළිකුණාටුවෙන්-පිලිපීන‍යේ-26-දෙනෙකු-ජීවිතක්ෂයට"
   }
 }
 ```
-# Changelog
 
-## [1.1.3] - 2024-10-24
-### Added
-- **Get News By URL**: Introduced a new feature that allows users to fetch news articles directly by providing a specific URL. This increases the flexibility of news retrieval options.
-- **Get Recent News**: Added a new method to fetch the most recent news articles, allowing users to stay updated with the latest information quickly.
+## Proxy Setup
 
-### Fixed
-- Resolved issues with response parsing that occasionally led to incorrect data formats being returned.
+### Cloudflare Workers (Free)
 
+You can run a tiny Cloudflare Worker to forward requests to `hirunews.lk` and use the worker URL as the `proxy` option for `Hiru`.
+
+```js
+// Cloudflare Worker
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+    url.hostname = 'hirunews.lk';
+    return fetch(url.toString());
+  }
+}
 ```
-This Hirunews website includes all types of news. You can use it for free without any payment.
-```
-## ✍️ Authors <a name = "authors"></a>
 
-- [@OmiduAnjane](https://github.com/OminduDissanayaka/hirunews-scrap) - Hiru News Unofficial scraped project author
+### Setup Steps
+
+1. Create an account at https://cloudflare.com
+2. Open the **Workers** section in the dashboard
+3. Create a new Worker and paste the code above
+4. Deploy the Worker and note the worker URL (e.g. `https://your-worker.workers.dev`)
+5. Use the Worker as proxy:
+
+```js
+const api = new Hiru({
+  proxy: 'https://your-worker.workers.dev'
+});
+```
+
+> Note: this Worker simply forwards requests to `hirunews.lk`. Use it responsibly and obey the target site's terms of service and robots.txt.
+
+## Contributing
+
+Contributions are welcome — open issues or submit pull requests. Please include tests where appropriate and follow the repository style.
+
+## License
+
+MIT — see [LICENSE](LICENSE) file.
+
+## ✍️ Author
+
+[@OminduDissanayaka](https://github.com/OminduDissanayaka/hirunews-scrap) — Hiru News Unofficial Scraper
+
+## Disclaimer
+
+This is an unofficial package and is not affiliated with, endorsed by, or
+connected to Hiru News in any way. All content belongs to hirunews.lk.
+
+This package is intended for educational purposes only. Use at your own risk.
+The author is not responsible for any misuse or legal issues arising from the
+use of this package.
