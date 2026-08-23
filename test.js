@@ -26,6 +26,7 @@ const api = new Hiru({
  * Execute a single call and log output.
  * @returns {Promise<void>}
  */
+
 async function News() {
     try {
         const News = await api.EntertainmentNews();
